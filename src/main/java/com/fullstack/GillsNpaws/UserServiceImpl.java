@@ -11,6 +11,12 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepo userRepo;
 
+
+    @Override
+    public void saveDetails(User user) {
+        userRepo.save(user);
+    }
+
     @Override
     public List<User> findByEmail(String email) {
         return userRepo.findByEmail(email);

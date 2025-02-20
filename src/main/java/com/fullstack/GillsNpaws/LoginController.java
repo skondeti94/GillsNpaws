@@ -28,4 +28,9 @@ public class LoginController {
         }
         return new ResponseEntity<String>("details not matched", HttpStatus.OK);
     }
+    @PostMapping(value="/register")
+    public ResponseEntity<String> Register(@RequestBody User user){
+        userService.saveDetails(user);
+        return new ResponseEntity<>("registered", HttpStatus.OK);
+    }
 }
